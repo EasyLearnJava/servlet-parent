@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.easylearnjava.servlet</groupId>
+		<artifactId>servlet-parent</artifactId>
+		<version>1.0.0-0-SNAPSHOT</version>
+	</parent>
+
+	<groupId>com.easylearnjava.servlet</groupId>
+	<artifactId>servlets-basics</artifactId>
+	<version>1.0.0-0-SNAPSHOT</version>
+	<packaging>war</packaging>
+
+	<name>servlets-basics Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.mortbay.jetty</groupId>
+					<artifactId>jetty-maven-plugin</artifactId>
+					<version>8.0.0.M3</version>
+					<configuration>
+						<scanIntervalSeconds>10</scanIntervalSeconds>
+						<contextPath>/</contextPath>
+						<scanIntervalSeconds>10</scanIntervalSeconds>
+						<stopKey>STOP</stopKey>
+						<stopPort>8005</stopPort>
+						<port>8080</port>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<finalName>servlets-basics</finalName>
+	</build>
+</project>

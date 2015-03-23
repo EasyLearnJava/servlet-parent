@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+
+	<display-name>servlets-basics</display-name>
+
+	<listener>
+		<listener-class>com.easylearnjava.listeners.ServletListener</listener-class>
+	</listener>
+	<listener>
+		<listener-class>com.easylearnjava.listeners.SessionListener</listener-class>
+	</listener>
+
+	<!-- Servlet Context parameter configuration -->
+	<context-param>
+		<param-name>instructor</param-name>
+		<param-value>raghu</param-value>
+	</context-param>
+
+	<!-- Configuring Filters in the application -->
+	<filter>
+		<filter-name>auServlet</filter-name>
+		<filter-class>com.easylearnjava.filters.AuthenticationFilter</filter-class>
+	</filter>
+	<filter>
+		<filter-name>lgServlet</filter-name>
+		<filter-class>com.easylearnjava.filters.LoggingFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>auServlet</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>lgServlet</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- Servlets Configuration -->
+	<servlet>
+		<servlet-name>fsServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.FirstServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>sdServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.SecondServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>TdServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.ThirdServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>frServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.FourthServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ftServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.FifthServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>siServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.SixthServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>svServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.SeventhServlet</servlet-class>
+		<init-param>
+			<param-name>tutorials</param-name>
+			<param-value>servlets</param-value>
+		</init-param>
+	</servlet>
+	<servlet>
+		<servlet-name>eiServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.EighthServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>niServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.NinthServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>teServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.TenthServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>elServlet</servlet-name>
+		<servlet-class>com.easylearnjava.servlets.EleventhServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>fsServlet</servlet-name>
+		<url-pattern>/myFirstServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>sdServlet</servlet-name>
+		<url-pattern>/mySecondServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TdServlet</servlet-name>
+		<url-pattern>/myThirdServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>frServlet</servlet-name>
+		<url-pattern>/myFourthServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ftServlet</servlet-name>
+		<url-pattern>/myFifthServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>siServlet</servlet-name>
+		<url-pattern>/mySixthServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>svServlet</servlet-name>
+		<url-pattern>/mySeventhServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>eiServlet</servlet-name>
+		<url-pattern>/myEighthServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>niServlet</servlet-name>
+		<url-pattern>/myNinthServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>teServlet</servlet-name>
+		<url-pattern>/myTenthServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>elServlet</servlet-name>
+		<url-pattern>/myElventhServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- Session Tracking -->
+	<servlet>
+		<servlet-name>createCookie</servlet-name>
+		<servlet-class>com.easylearnjava.sessiontracking.STCreateCookie</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>readCookie</servlet-name>
+		<servlet-class>com.easylearnjava.sessiontracking.STReadCookie</servlet-class>
+	</servlet>
+	<!-- <servlet>
+		<servlet-name>CreateHiddenField</servlet-name>
+		<servlet-class>com.easylearnjava.sessiontracking.STCreateHiddenField</servlet-class>
+	</servlet> -->
+	<servlet>
+		<servlet-name>readHiddenField</servlet-name>
+		<servlet-class>com.easylearnjava.sessiontracking.STReadHiddenField</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>CreateURLData</servlet-name>
+		<servlet-class>com.easylearnjava.sessiontracking.STCreateURL</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>readURLData</servlet-name>
+		<servlet-class>com.easylearnjava.sessiontracking.STReadURL</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>createHttpSession</servlet-name>
+		<servlet-class>com.easylearnjava.sessiontracking.STCreateHttpSession</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>readHttpSession</servlet-name>
+		<servlet-class>com.easylearnjava.sessiontracking.STReadHttpSession</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>createCookie</servlet-name>
+		<url-pattern>/createCookieServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>readCookie</servlet-name>
+		<url-pattern>/readCookieServlet</url-pattern>
+	</servlet-mapping>
+	<!-- <servlet-mapping>
+		<servlet-name>createHiddenField</servlet-name>
+		<url-pattern>/createHiddenFieldServlet</url-pattern>
+	</servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>readHiddenField</servlet-name>
+		<url-pattern>/readHiddenFieldServlet</url-pattern>
+	</servlet-mapping>
+	<!-- <servlet-mapping>
+		<servlet-name>createURLData</servlet-name>
+		<url-pattern>/createURLReWritingServlet</url-pattern>
+	</servlet-mapping> -->
+	<servlet-mapping>
+		<servlet-name>readURLData</servlet-name>
+		<url-pattern>/readURLReWritingServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>createHttpSession</servlet-name>
+		<url-pattern>/createHttpSessionServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>readHttpSession</servlet-name>
+		<url-pattern>/readHttpSessionServlet</url-pattern>
+	</servlet-mapping>
+
+	<!-- For testing the session Listener -->
+	<servlet>
+		<servlet-name>testSessionListener</servlet-name>
+		<servlet-class>com.easylearnjava.listeners.SessionListenerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>testSessionListener</servlet-name>
+		<url-pattern>/createSessionServlet</url-pattern>
+	</servlet-mapping>
+
+</web-app>
