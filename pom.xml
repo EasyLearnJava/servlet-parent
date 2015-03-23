@@ -85,5 +85,6 @@
 
 	<modules>
 		<module>servlets-basics</module>
+		<module>servlets-html-hashmap-login</module>
 	</modules>
 </project>
